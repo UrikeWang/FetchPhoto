@@ -22,10 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Fw-8Z-JDE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHK-3n-1SS">
                                 <rect key="frame" x="0.0" y="590" width="375" height="77"/>
                                 <subviews>
@@ -46,22 +42,47 @@
                                     <constraint firstAttribute="trailing" secondItem="r0Z-0D-mUE" secondAttribute="trailing" constant="97" id="yWd-QU-laQ"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QD0-hR-m6Y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_photo" translatesAutoresizingMaskIntoConstraints="NO" id="2Fw-8Z-JDE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2Fw-8Z-JDE" firstAttribute="top" secondItem="QD0-hR-m6Y" secondAttribute="top" id="Gd8-Lk-Iba"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Fw-8Z-JDE" secondAttribute="bottom" id="Oe9-kD-tSV"/>
+                                    <constraint firstItem="2Fw-8Z-JDE" firstAttribute="leading" secondItem="QD0-hR-m6Y" secondAttribute="leading" id="S2x-lz-EF3"/>
+                                    <constraint firstItem="2Fw-8Z-JDE" firstAttribute="centerX" secondItem="QD0-hR-m6Y" secondAttribute="centerX" id="Vbk-43-UVQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Fw-8Z-JDE" secondAttribute="trailing" id="eZl-cc-uaA"/>
+                                    <constraint firstItem="2Fw-8Z-JDE" firstAttribute="leading" secondItem="QD0-hR-m6Y" secondAttribute="leading" id="ecF-c0-xBT"/>
+                                    <constraint firstItem="2Fw-8Z-JDE" firstAttribute="centerY" secondItem="QD0-hR-m6Y" secondAttribute="centerY" id="fuG-fc-s6s"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Fw-8Z-JDE" secondAttribute="trailing" id="rcD-qE-OZQ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nTn-8A-dWb"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KHK-3n-1SS" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="8FK-9M-rzQ"/>
-                            <constraint firstItem="KHK-3n-1SS" firstAttribute="top" secondItem="2Fw-8Z-JDE" secondAttribute="bottom" id="BDD-1v-bb0"/>
                             <constraint firstAttribute="trailing" secondItem="KHK-3n-1SS" secondAttribute="trailing" id="ItI-TW-OzH"/>
-                            <constraint firstItem="KHK-3n-1SS" firstAttribute="trailing" secondItem="2Fw-8Z-JDE" secondAttribute="trailing" id="POR-Xd-5yj"/>
-                            <constraint firstItem="KHK-3n-1SS" firstAttribute="leading" secondItem="2Fw-8Z-JDE" secondAttribute="leading" id="ko8-nQ-uSk"/>
-                            <constraint firstItem="2Fw-8Z-JDE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uV8-Up-OIw"/>
+                            <constraint firstItem="QD0-hR-m6Y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MqY-3R-QVI"/>
+                            <constraint firstItem="KHK-3n-1SS" firstAttribute="top" secondItem="QD0-hR-m6Y" secondAttribute="bottom" id="XvY-6c-MqH"/>
+                            <constraint firstItem="QD0-hR-m6Y" firstAttribute="trailing" secondItem="KHK-3n-1SS" secondAttribute="trailing" id="nai-Py-yG7"/>
+                            <constraint firstItem="QD0-hR-m6Y" firstAttribute="leading" secondItem="KHK-3n-1SS" secondAttribute="leading" id="sPi-Cl-fkN"/>
                             <constraint firstItem="KHK-3n-1SS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wC1-PK-MNc"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="addPhotoButton" destination="r0Z-0D-mUE" id="4tX-eR-0yJ"/>
                         <outlet property="buttonBackgroundView" destination="KHK-3n-1SS" id="giQ-iO-rpb"/>
                         <outlet property="photoImageView" destination="2Fw-8Z-JDE" id="bWQ-Cf-3Ut"/>
+                        <outlet property="photoScrollView" destination="QD0-hR-m6Y" id="exp-JS-dJI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,4 +90,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_photo" width="44" height="44"/>
+    </resources>
 </document>
