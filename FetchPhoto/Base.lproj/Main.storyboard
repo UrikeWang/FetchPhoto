@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="ViewController" customClass="ViewController" customModule="FetchPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Fw-8Z-JDE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHK-3n-1SS">
+                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0Z-0D-mUE">
+                                        <rect key="frame" x="98" y="17" width="180" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="r0Z-0D-mUE" secondAttribute="height" multiplier="45:11" id="g5R-Gs-opH"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="r0Z-0D-mUE" secondAttribute="bottom" constant="16" id="DQe-UK-1nh"/>
+                                    <constraint firstItem="r0Z-0D-mUE" firstAttribute="top" secondItem="KHK-3n-1SS" secondAttribute="top" constant="17" id="aMm-Y5-1U6"/>
+                                    <constraint firstItem="r0Z-0D-mUE" firstAttribute="leading" secondItem="KHK-3n-1SS" secondAttribute="leading" constant="98" id="wOr-us-RCj"/>
+                                    <constraint firstAttribute="trailing" secondItem="r0Z-0D-mUE" secondAttribute="trailing" constant="97" id="yWd-QU-laQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KHK-3n-1SS" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="8FK-9M-rzQ"/>
+                            <constraint firstItem="KHK-3n-1SS" firstAttribute="top" secondItem="2Fw-8Z-JDE" secondAttribute="bottom" id="BDD-1v-bb0"/>
+                            <constraint firstAttribute="trailing" secondItem="KHK-3n-1SS" secondAttribute="trailing" id="ItI-TW-OzH"/>
+                            <constraint firstItem="KHK-3n-1SS" firstAttribute="trailing" secondItem="2Fw-8Z-JDE" secondAttribute="trailing" id="POR-Xd-5yj"/>
+                            <constraint firstItem="KHK-3n-1SS" firstAttribute="leading" secondItem="2Fw-8Z-JDE" secondAttribute="leading" id="ko8-nQ-uSk"/>
+                            <constraint firstItem="2Fw-8Z-JDE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uV8-Up-OIw"/>
+                            <constraint firstItem="KHK-3n-1SS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wC1-PK-MNc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="r0Z-0D-mUE" id="4tX-eR-0yJ"/>
+                        <outlet property="buttonBackgroundView" destination="KHK-3n-1SS" id="giQ-iO-rpb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
