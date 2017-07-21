@@ -16,34 +16,47 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-    func callGetPhoto() {
+//    func callGetPhoto() {
+//        
+//        let photoPicker: UIImagePickerController = UIImagePickerController()
+//        
+//        photoPicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+//        photoPicker.allowsEditing = true // 可對照片作編輯
+//        photoPicker.delegate = self
+//        self.present(photoPicker, animated: true, completion: nil)
+//        
+//
+//    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [String: Any]) {
         
-        let photoPicker: UIImagePickerController = UIImagePickerController()
+        picker.dismiss(animated: true, completion: nil) // 關掉
         
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            
-            photoPicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            photoPicker.allowsEditing = true
-            photoPicker.delegate = self
-            self.present(photoPicker, animated: true, completion: nil)
-            
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            photoImageView.image = image
+        } else{
+            print("Something went wrong")
         }
+        
+//        self.photoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+//        photoPicker.image = [info objectForKey:UIImagePickerControllerOriginalImage]
+        
+        print("",info[UIImagePickerControllerOriginalImage])
     
     }
     
-    private func photoPickerController(_ photoPicker: UIImagePickerController,  didFinishPickingMediaWithInfo info: [String: Any]) {
-    
-        photoPicker.dismiss(animated: true, completion: nil)
-        self.photoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-    }
-    
-    func imagePickerControllerDidCancel(_ photoPicker: UIImagePickerController) {
-        photoPicker.dismiss(animated: true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func addPhotoButton(_ sender: UIButton) {
         
-        self.callGetPhoto()
+        let picker: UIImagePickerController = UIImagePickerController()
+        
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        picker.allowsEditing = true // 可對照片作編輯
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -69,11 +82,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         photoImageView.image = UIImage(named: "icon_photo")
         photoImageView.layer.backgroundColor = UIColor.black.cgColor
         photoImageView.tintColor = UIColor.white
-//        photoImageView.contentMode = .scaleToFill
         
+//        photoImageView.contentMode = .scaleToFit
         
-        self.view.addSubview(self.photoImageView)
-//        self.view.addSubview(addPhotoButton)
         
     }
 
